@@ -1,0 +1,121 @@
+.message-input-container {
+  background-color: var(--input-bg);
+  padding: 10px 20px;
+  position: relative;
+}
+
+.file-preview {
+  background-color: var(--bg-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.file-preview img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+}
+
+.file-preview-doc {
+  padding: 10px;
+  color: var(--text-primary);
+}
+
+.remove-file-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.message-input-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  padding: 8px 15px;
+}
+
+.input-actions-left {
+  display: flex;
+  gap: 5px;
+}
+
+.input-icon-button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.input-icon-button:hover {
+  background-color: var(--hover-color);
+}
+
+.message-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+  padding: 8px 10px;
+}
+
+.message-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.send-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.send-button:hover:not(:disabled) {
+  background-color: var(--hover-color);
+  transform: scale(1.1);
+}
+
+.send-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.emoji-picker-container {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  z-index: 100;
+  max-width: 350px;
+}
+
+.emoji-picker-container .EmojiPickerReact {
+  background-color: var(--bg-color) !important;
+  border: 1px solid var(--border-color) !important;
+}

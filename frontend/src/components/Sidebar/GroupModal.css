@@ -1,0 +1,150 @@
+.group-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.group-modal {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.group-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.group-modal-header h2 {
+  color: var(--text-primary);
+  font-size: 20px;
+}
+
+.group-modal-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.group-name-input,
+.user-search-input {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.group-name-input:focus,
+.user-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.selected-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selected-user-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.selected-user-badge button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.user-search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.user-search-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.user-search-item:hover {
+  background-color: var(--hover-color);
+}
+
+.user-search-item.selected {
+  background-color: var(--input-bg);
+}
+
+.user-search-item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-search-item .user-info h4 {
+  color: var(--text-primary);
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.user-search-item .user-info p {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.create-group-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-group-button:hover:not(:disabled) {
+  background-color: var(--secondary-color);
+}
+
+.create-group-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
