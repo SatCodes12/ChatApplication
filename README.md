@@ -76,8 +76,8 @@ Create a `.env` file in the server directory:
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chatapp?retryWrites=true&w=majority
-JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
+MONGODB_URI=(your mongodb uri)
+JWT_SECRET=(your secret key)
 CLIENT_URL=http://localhost:3000
 
 # Cloudinary Configuration
