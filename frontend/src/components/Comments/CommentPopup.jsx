@@ -7,7 +7,7 @@ import './CommentPopup.css';
 import moment from 'moment';
 
 const CommentPopup = ({ messageId, onClose }) => {
-    const { selectedChat } = useChatContext();
+    const { user, selectedChat } = useChatContext();
     const { socket } = useSocket();
 
     const [comments, setComments] = useState([]);
@@ -102,7 +102,7 @@ const CommentPopup = ({ messageId, onClose }) => {
                         <div key={comment._id} className="comment-item">
                             <div className="comment-top">
                                 <span className="comment-user">
-                                    {comment.user?.name}
+                                    {(comment.user?._id === user._id) ? 'You' : comment.user?.name}
                                 </span>
 
                                 <span className="comment-time">
