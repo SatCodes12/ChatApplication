@@ -1,5 +1,21 @@
 import mongoose from 'mongoose';
 
+const commentSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    content: {
+      type: String,
+      required: true,
+      trim: true
+    }
+  },
+  { timestamps: true }
+);
+
 const messageSchema = new mongoose.Schema({
   sender: {
     type: mongoose.Schema.Types.ObjectId,
@@ -20,22 +36,25 @@ const messageSchema = new mongoose.Schema({
     enum: ['text', 'image', 'file'],
     default: 'text'
   },
-  fileUrl: {
-    type: String
+  fileUrl: String,
+  fileName: String,
+  fileSize: Number,
+
+  allowComments: {
+    type: Boolean,
+    default: function () {
+      return this.messageType === 'image';
+    }
   },
-  fileName: {
-    type: String
-  },
-  fileSize: {
-    type: Number
-  },
+
+  comments: [commentSchema],
+
   readBy: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }]
-}, {
-  timestamps: true
-});
+
+}, { timestamps: true });
 
 const Message = mongoose.model('Message', messageSchema);
 

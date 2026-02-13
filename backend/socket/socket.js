@@ -51,6 +51,20 @@ const initSocket = (server) => {
       });
     });
 
+    // New comment
+    socket.on('new comment', (data) => {
+      const { messageId, comment, chat } = data;
+
+      if (!chat.users) return console.log('chat.users not defined');
+
+      chat.users.forEach((user) => {
+        socket.to(user._id).emit('comment received', {
+          messageId,
+          comment
+        });
+      });
+    });
+
     // Chat created
     socket.on('chat created', (newChat) => {
       if (!newChat.users) return console.log('chat.users not defined');
